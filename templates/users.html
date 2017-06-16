@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!--<table>
+        <caption>{{title}}</caption>
+        <thead><th>ID</th><th>Name</th><th>email</th><th>salary</th><th>phone</th><th>address</th></thead>
+        <tbody>
+        {% for user in user_list%}
+        <tr><td>{{user.id}}</td><td>{{user.name}}</td><td>{{user.email}}</td><td>{{user.salary}}</td><td>{{user.phone}}<td>{{user.address}}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table> -->
+    <form method="POST" action="/users/">
+        <fieldset>
+            <legend>Create User</legend>
+            {% csrf_token %}
+            {{form_user}}
+            <button type="submit">Create</button>
+        </fieldset>
+    </form>
+	 <table>
+        <caption>{{title}}</caption>
+        <thead><th>ID</th><th>Name</th><th>email</th><th>salary</th><th>phone</th><th>address</th></thead>
+        <tbody>
+        {% for user in user_list%}
+        <tr><td>{{user.id}}</td><td>{{user.name}}</td><td>{{user.email}}</td><td>{{user.salary}}</td><td>{{user.phone}}<td>{{user.address}}</td></tr>
+        {% endfor %}
+        </tbody>
+    </table> 
+  </body>
+</html>
